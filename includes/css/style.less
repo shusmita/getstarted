@@ -346,10 +346,8 @@ h4 {
 	}
 }
 #blog-slider {
-	top:80px;
-	margin-bottom: 50px;
-	display: inline-block;
-	position: relative;
+	top:100px;
+	margin-bottom: 70px;
 	.category {
 		color: @orange;
 		font-size: 12px;
@@ -380,7 +378,7 @@ h4 {
 	a {
 		color: @grayDarkText;
 	}
-	ul li {
+	.uk-slider li {
 		.bottom {
 			padding: 20px 20px 10px 20px;
 			border: 1px solid #ccc;
@@ -397,6 +395,19 @@ h4 {
 					width:100%;
 				}
 			}
+		}
+	}
+	.uk-dotnav-contrast>*>* {
+		border: 2px solid #cbc9c9;
+	}
+	.uk-dotnav {
+		top: -40px;
+		left: 7px;
+		>.uk-active>* {
+			background:@orange;
+			-webkit-transform:scale(1);
+			transform:scale(1);
+			border: 2px solid @orange;
 		}
 	}
 }
@@ -448,3 +459,148 @@ h4 {
 		}
 	}
 }
+/*slidenav*/
+.uk-slidenav {
+	display:inline-block;
+	box-sizing:border-box;
+	width:60px;
+	height:60px;
+	line-height:60px;
+	color:rgba(50,50,50,.4);
+	font-size:60px;
+	text-align:center;
+	&:focus,&:hover {
+		outline:0;
+		text-decoration:none;
+		color:#ccc;
+		cursor:pointer;
+	}
+	&:active {
+		color:#ccc;
+	}
+}
+
+
+.uk-slidenav-previous:before {
+	content:"\f104";
+	font-family:FontAwesome;
+	color:rgba(50,50,50,.4);
+}
+.uk-slidenav-next:before {
+	content:"\f105";
+	font-family:FontAwesome;
+	color:rgba(50,50,50,.4);
+}
+.uk-slidenav-position {
+	position:relative;
+	.uk-slidenav {
+		display:none;
+		position:absolute;
+		top:50%;
+		z-index:1;
+		margin-top:-30px;
+	}
+	&:hover .uk-slidenav {
+		display:block;
+	}
+	.uk-slidenav-previous {
+		left:20px;
+	}
+	.uk-slidenav-next {
+		right:20px;
+	}
+}
+
+.uk-slidenav-contrast {
+	color:#ccc;
+	&:focus, &:hover {
+		color:#ccc;
+	}
+	&:active {
+		color:#ccc;
+	}
+}
+/*dot nave on slideshow */
+.uk-dotnav {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	margin-left:-15px;
+	margin-top:-15px;
+	padding:0;
+	list-style:none;
+	>* {
+		-ms-flex:none;
+		-webkit-flex:none;
+		flex:none;
+		padding-left:7px;
+		margin-top:15px;
+	}
+	&:after, &:before {
+		content:"";
+		display:block;
+		overflow:hidden;
+	}
+	&:after {
+		clear:both;
+	}
+	>* {
+		float:left;
+	}
+	>*>* {
+		display:block;
+		box-sizing:content-box;
+		width:10px;
+		height:10px;
+		border-radius:50%;
+		background:rgba(50,50,50,.1);
+		text-indent:100%;
+		overflow:hidden;
+		white-space:nowrap;
+		-webkit-transition:all .2s ease-in-out;
+		transition:all .2s ease-in-out;
+	}
+	>*>:focus, >*>:hover {
+		background:rgba(50,50,50,.4);
+		outline:0;
+	}
+	>*>:active {
+		background:rgba(50,50,50,.6);
+	}
+	>.uk-active>* {
+		background:@orange;
+		-webkit-transform:scale(1);
+		transform:scale(1);
+		border: 2px solid @orange;
+	}
+}
+
+.uk-dotnav-contrast>*>* {
+	background:transparent;
+	border: 2px solid white;
+}
+.uk-dotnav-contrast>*>:focus,.uk-dotnav-contrast>*>:hover {
+	background:@orange;
+	border: 2px solid @orange;
+}
+.uk-dotnav-contrast>*>:active {
+	background:@orange;
+	border: 2px solid @orange;
+}
+.uk-dotnav-contrast>.uk-active>* {
+	background:@orange;
+	border: 2px solid @orange;
+}
+.uk-dotnav-vertical {
+	-ms-flex-direction:column;
+	-webkit-flex-direction:column;
+	flex-direction:column;
+	>* {
+		float:none;
+	}
+}
+
+
